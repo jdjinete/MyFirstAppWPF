@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:MyFirstAppWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+    <Grid Margin="0,0,-1364,-467">
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="229,90,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
