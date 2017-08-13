@@ -10,27 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MyFirstAppWPF
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para WizardWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WizardWindow : Window
     {
-        public MainWindow()
+        public WizardWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void FirstNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var win = new WizardWindow();
-            win.ShowDialog();
-            if (!string.IsNullOrEmpty(win.FirstNameTextBox.Text))
-                MessageBox.Show("Hello !" + win.FirstNameTextBox.Text + "¡ How are you?");
+            if (string.IsNullOrEmpty(FirstNameTextBox.Text))
+            {
+
+                Page1.CanSelectNextPage = false;
+            }
+            else {
+
+                Page1.CanSelectNextPage = true;
+            }
         }
     }
 }
